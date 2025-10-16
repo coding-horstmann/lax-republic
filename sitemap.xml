@@ -18,7 +18,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/all</loc>
+    <loc>https://www.lax-republic.de/all</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -26,7 +26,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/all" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/nachhaltige+produkte?q=D6</loc>
+    <loc>https://www.lax-republic.de/nachhaltige-produkte</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -34,7 +34,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/nachhaltige+produkte?q=D6" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/nachhaltige+produkte+t-shirts%2C+polo+shirts+%26+tank+tops?q=P2</loc>
+    <loc>https://www.lax-republic.de/nachhaltige-produkte/t-shirts-polo-shirts-und-tank-tops</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -42,7 +42,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/nachhaltige+produkte+t-shirts%2C+polo+shirts+%26+tank+tops?q=P2" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/m%C3%A4nner?q=D1</loc>
+    <loc>https://www.lax-republic.de/maenner</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -50,7 +50,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/m%C3%A4nner?q=D1" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/m%C3%A4nner+nachhaltige+produkte?q=P68</loc>
+    <loc>https://www.lax-republic.de/maenner/nachhaltige-produkte</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -58,7 +58,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/m%C3%A4nner+nachhaltige+produkte?q=P68" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/m%C3%A4nner+t-shirts?q=P24</loc>
+    <loc>https://www.lax-republic.de/maenner/t-shirts</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -66,7 +66,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/m%C3%A4nner+t-shirts?q=P24" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/m%C3%A4nner+pullover+%26+hoodies?q=P27</loc>
+    <loc>https://www.lax-republic.de/maenner/pullover-hoodies</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -74,7 +74,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/m%C3%A4nner+pullover+%26+hoodies?q=P27" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/frauen?q=D3</loc>
+    <loc>https://www.lax-republic.de/frauen</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -82,7 +82,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/frauen?q=D3" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/frauen+nachhaltige+produkte?q=P69</loc>
+    <loc>https://www.lax-republic.de/frauen/nachhaltige-produkte</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -90,7 +90,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/frauen+nachhaltige+produkte?q=P69" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/frauen+t-shirts?q=P33</loc>
+    <loc>https://www.lax-republic.de/frauen/t-shirts</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -98,7 +98,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/frauen+t-shirts?q=P33" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/frauen+pullover+%26+hoodies?q=P37</loc>
+    <loc>https://www.lax-republic.de/frauen/pullover-hoodies</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -106,7 +106,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/frauen+pullover+%26+hoodies?q=P37" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/accessoires?q=D5</loc>
+    <loc>https://www.lax-republic.de/accessoires</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -114,7 +114,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/accessoires?q=D5" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/accessoires+taschen+%26+rucks%C3%A4cke?q=P47</loc>
+    <loc>https://www.lax-republic.de/accessoires/taschen-rucksaecke</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -122,7 +122,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/accessoires+taschen+%26+rucks%C3%A4cke?q=P47" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/accessoires+tassen+%26+zubeh%C3%B6r?q=P49</loc>
+    <loc>https://www.lax-republic.de/accessoires/tassen-zubehoer</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -130,7 +130,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/accessoires+tassen+%26+zubeh%C3%B6r?q=P49" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/accessoires+sticker+%26+magnete?q=P51</loc>
+    <loc>https://www.lax-republic.de/accessoires/sticker-magnete</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -138,7 +138,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/accessoires+sticker+%26+magnete?q=P51" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/accessoires+sch%C3%BCrzen?q=P48</loc>
+    <loc>https://www.lax-republic.de/accessoires/schuerzen</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -146,7 +146,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/accessoires+sch%C3%BCrzen?q=P48" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/accessoires+kissen?q=P133</loc>
+    <loc>https://www.lax-republic.de/accessoires/kissen</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
@@ -154,7 +154,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/accessoires+kissen?q=P133" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/about</loc>
+    <loc>https://www.lax-republic.de/about</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -162,7 +162,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.lax-republic.de/#!/about" />
   </url>
   <url>
-    <loc>https://www.lax-republic.de/#!/imprint</loc>
+    <loc>https://www.lax-republic.de/imprint</loc>
     <lastmod>2025-10-16</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

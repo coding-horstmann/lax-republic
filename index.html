@@ -191,6 +191,35 @@
     <div id="myShop"></div>
 
     <script>
+      // Clientseitiges Routing: saubere Pfade -> entsprechende Hash-Routen des Spreadshops
+      (function mapCleanRoutesToHash() {
+        var path = location.pathname.replace(/\/+$/, '');
+        var routeMap = {
+          '/all': '#!/all',
+          '/nachhaltige-produkte': '#!/nachhaltige+produkte?q=D6',
+          '/nachhaltige-produkte/t-shirts-polo-shirts-und-tank-tops': '#!/nachhaltige+produkte+t-shirts%2C+polo+shirts+%26+tank+tops?q=P2',
+          '/maenner': '#!/m%C3%A4nner?q=D1',
+          '/maenner/nachhaltige-produkte': '#!/m%C3%A4nner+nachhaltige+produkte?q=P68',
+          '/maenner/t-shirts': '#!/m%C3%A4nner+t-shirts?q=P24',
+          '/maenner/pullover-hoodies': '#!/m%C3%A4nner+pullover+%26+hoodies?q=P27',
+          '/frauen': '#!/frauen?q=D3',
+          '/frauen/nachhaltige-produkte': '#!/frauen+nachhaltige+produkte?q=P69',
+          '/frauen/t-shirts': '#!/frauen+t-shirts?q=P33',
+          '/frauen/pullover-hoodies': '#!/frauen+pullover+%26+hoodies?q=P37',
+          '/accessoires': '#!/accessoires?q=D5',
+          '/accessoires/taschen-rucksaecke': '#!/accessoires+taschen+%26+rucks%C3%A4cke?q=P47',
+          '/accessoires/tassen-zubehoer': '#!/accessoires+tassen+%26+zubeh%C3%B6r?q=P49',
+          '/accessoires/sticker-magnete': '#!/accessoires+sticker+%26+magnete?q=P51',
+          '/accessoires/schuerzen': '#!/accessoires+sch%C3%BCrzen?q=P48',
+          '/accessoires/kissen': '#!/accessoires+kissen?q=P133',
+          '/about': '#!/about',
+          '/imprint': '#!/imprint'
+        };
+        if (routeMap[path] && location.hash !== routeMap[path]) {
+          location.replace('/' + routeMap[path]);
+        }
+      })();
+    </script>
       var spread_shop_config = {
         shopName: 'lax-republic',
         locale: 'de_DE',

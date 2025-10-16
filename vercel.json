@@ -17,6 +17,27 @@
       "destination": "https://www.lax-republic.de/:path*",
       "permanent": true
     }
+  ],
+  "rewrites": [
+    { "source": "/all", "destination": "/" },
+    { "source": "/nachhaltige-produkte", "destination": "/" },
+    { "source": "/nachhaltige-produkte/t-shirts-polo-shirts-und-tank-tops", "destination": "/" },
+    { "source": "/maenner", "destination": "/" },
+    { "source": "/maenner/nachhaltige-produkte", "destination": "/" },
+    { "source": "/maenner/t-shirts", "destination": "/" },
+    { "source": "/maenner/pullover-hoodies", "destination": "/" },
+    { "source": "/frauen", "destination": "/" },
+    { "source": "/frauen/nachhaltige-produkte", "destination": "/" },
+    { "source": "/frauen/t-shirts", "destination": "/" },
+    { "source": "/frauen/pullover-hoodies", "destination": "/" },
+    { "source": "/accessoires", "destination": "/" },
+    { "source": "/accessoires/taschen-rucksaecke", "destination": "/" },
+    { "source": "/accessoires/tassen-zubehoer", "destination": "/" },
+    { "source": "/accessoires/sticker-magnete", "destination": "/" },
+    { "source": "/accessoires/schuerzen", "destination": "/" },
+    { "source": "/accessoires/kissen", "destination": "/" },
+    { "source": "/about", "destination": "/" },
+    { "source": "/imprint", "destination": "/" }
   ]
 }
 
