@@ -24,6 +24,17 @@
       #myShop img { max-width: 100%; height: auto; }
       /* Optional: auf sehr großen Screens noch etwas schmaler */
       @media (min-width: 1600px) { #myShop { max-width: 1000px; } }
+      /* Hero-Bild überschreiben (Spreadshop Startseiten-Teaser) */
+      #myShop .sprd-startpage-teaser__image {
+        background-image: url('./hero.jpg') !important;
+        background-position: left center !important;
+        background-size: cover !important;
+      }
+      /* Etwaige Dimm-/Filtereffekte der Standard-Hero-Grafik entfernen */
+      #myShop .sprd-startpage-teaser__image--has-text {
+        filter: none !important;
+        opacity: 1 !important;
+      }
     </style>
     <link rel="canonical" href="https://niklasarthouse.de/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
