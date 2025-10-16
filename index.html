@@ -61,6 +61,29 @@
         color: #22262D;
         line-height: 1.5;
       }
+      /* Großer Textbereich unter "Über den Shop" */
+      .custom-about-large {
+        margin: 3rem auto;
+        padding: 2rem 1.5rem;
+        border: 1px solid rgba(0,0,0,.12);
+        border-radius: 8px;
+        background: #fff;
+        max-width: 900px;
+        box-sizing: border-box;
+      }
+      .custom-about__title {
+        margin: 0 0 1rem;
+        text-align: center;
+      }
+      .custom-about__text {
+        color: #22262D;
+        line-height: 1.8;
+        font-size: 1.125rem;
+      }
+      @media (max-width: 767px) {
+        .custom-about-large { padding: 1.25rem 1rem; }
+        .custom-about__text { font-size: 1rem; line-height: 1.7; }
+      }
       /* Zwei-Spalten-Layout: links Bild (50%), rechts Text (50%) */
       #myShop .sprd-startpage-teaser__link {
         display: flex !important;
@@ -154,6 +177,49 @@
           var about = document.querySelector('#myShop #sprd-startpage-about-us');
           if (about && about.parentNode && !document.getElementById('custom-faq-title')) {
             about.parentNode.insertBefore(FAQ_HTML, about);
+            return true;
+          }
+          return false;
+        }
+
+        if (tryInsert()) return;
+
+        var observer = new MutationObserver(function () {
+          if (tryInsert()) {
+            observer.disconnect();
+          }
+        });
+        var root = document.getElementById('myShop');
+        if (root) {
+          observer.observe(root, { subtree: true, childList: true });
+          // Fallback: nach 10s aufhören zu beobachten
+          setTimeout(function () { try { observer.disconnect(); } catch (e) {} }, 10000);
+        }
+      })();
+    </script>
+    <script>
+      // Großen Textblock direkt NACH dem Bereich "Über den Shop" einfügen
+      (function insertCustomAboutWhenReady() {
+        var ABOUT_HTML = (function () {
+          var section = document.createElement('section');
+          section.className = 'custom-about-large sprd-bg-m3 sprd-c-s3';
+          section.setAttribute('aria-labelledby', 'custom-about-title');
+          section.innerHTML = (
+            '<h2 id="custom-about-title" class="custom-about__title sprd__caption">Über den Shop</h2>' +
+            '<div class="custom-about__text">' +
+            'Platzhaltertext: Hier folgt ein längerer Beschreibungstext über Dich, Deine Designs und Deinen Shop. ' +
+            'Beschreibe kurz Deine Inspiration, die Qualität der Produkte und was Kundinnen und Kunden erwarten dürfen. ' +
+            'Diesen Text passt Du später an.' +
+            '</div>'
+          );
+          return section;
+        })();
+
+        function tryInsert() {
+          var about = document.querySelector('#myShop #sprd-startpage-about-us');
+          if (about && about.parentNode && !document.getElementById('custom-about-title')) {
+            // NACH dem bestehenden About-Block einfügen
+            about.insertAdjacentElement('afterend', ABOUT_HTML);
             return true;
           }
           return false;
