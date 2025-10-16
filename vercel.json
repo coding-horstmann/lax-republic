@@ -1,0 +1,23 @@
+{
+  "version": 2,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        { "type": "host", "value": "lax-republic.vercel.app" }
+      ],
+      "destination": "https://www.lax-republic.de/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        { "type": "host", "value": "lax-republic.de" }
+      ],
+      "destination": "https://www.lax-republic.de/:path*",
+      "permanent": true
+    }
+  ]
+}
+
+
