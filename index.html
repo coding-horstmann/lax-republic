@@ -155,9 +155,17 @@
       });
     </script>
     <script>
-      // FAQ-Block dynamisch direkt vor den Bereich "Über den Shop" setzen
-      (function insertFAQWhenReady() {
-        var FAQ_HTML = (function () {
+      // Robuste SPA-taugliche Einfügelogik für FAQ und "Über den Shop"
+      (function robustInsertCustomBlocks() {
+        var ROOT = document.getElementById('myShop') || document.body;
+        var MAX_WAIT_MS = 60000;     // bis zu 60s nach jedem Routenwechsel versuchen
+        var RECHECK_MS = 800;        // Prüfintervall
+        var ABOUT_SELECTOR = '#sprd-startpage-about-us, [id*="about-us"]';
+
+        function createFAQ() {
+          if (document.getElementById('custom-faq-title')) {
+            return document.querySelector('.custom-faq');
+          }
           var wrapper = document.createElement('section');
           wrapper.className = 'custom-faq sprd-bg-m3 sprd-c-s3';
           wrapper.setAttribute('aria-labelledby', 'custom-faq-title');
@@ -172,36 +180,12 @@
             '<details><summary>Wie kontaktiere ich den Support?</summary><div class="custom-faq__answer">Platzhalter-Text. Details folgen.</div></details>'
           );
           return wrapper;
-        })();
-
-        function tryInsert() {
-          var about = document.querySelector('#myShop #sprd-startpage-about-us');
-          if (about && about.parentNode && !document.getElementById('custom-faq-title')) {
-            about.parentNode.insertBefore(FAQ_HTML, about);
-            return true;
-          }
-          return false;
         }
 
-        if (tryInsert()) return;
-
-        var observer = new MutationObserver(function () {
-          if (tryInsert()) {
-            observer.disconnect();
+        function createAbout() {
+          if (document.getElementById('custom-about-title')) {
+            return document.querySelector('.custom-about-large');
           }
-        });
-        var root = document.getElementById('myShop');
-        if (root) {
-          observer.observe(root, { subtree: true, childList: true });
-          // Fallback: nach 10s aufhören zu beobachten
-          setTimeout(function () { try { observer.disconnect(); } catch (e) {} }, 10000);
-        }
-      })();
-    </script>
-    <script>
-      // Großen Textblock direkt NACH dem Bereich "Über den Shop" einfügen
-      (function insertCustomAboutWhenReady() {
-        var ABOUT_HTML = (function () {
           var section = document.createElement('section');
           section.className = 'custom-about-large sprd-bg-m3 sprd-c-s3';
           section.setAttribute('aria-labelledby', 'custom-about-title');
@@ -214,31 +198,69 @@
             '</div>'
           );
           return section;
-        })();
-
-        function tryInsert() {
-          var about = document.querySelector('#myShop #sprd-startpage-about-us');
-          if (about && about.parentNode && !document.getElementById('custom-about-title')) {
-            // NACH dem bestehenden About-Block einfügen
-            about.insertAdjacentElement('afterend', ABOUT_HTML);
-            return true;
-          }
-          return false;
         }
 
-        if (tryInsert()) return;
+        function tryInsertOnce() {
+          var container = document.getElementById('myShop') || document.body;
+          var about = container.querySelector(ABOUT_SELECTOR) || document.querySelector(ABOUT_SELECTOR);
+          if (!about || !about.parentNode) return false;
 
-        var observer = new MutationObserver(function () {
-          if (tryInsert()) {
-            observer.disconnect();
+          if (!document.getElementById('custom-faq-title')) {
+            var faq = createFAQ();
+            if (faq) about.parentNode.insertBefore(faq, about);
           }
+          if (!document.getElementById('custom-about-title')) {
+            var aboutBlock = createAbout();
+            if (aboutBlock) about.insertAdjacentElement('afterend', aboutBlock);
+          }
+          return true;
+        }
+
+        var retryTimer = null;
+        function scheduleRetries() {
+          var start = Date.now();
+          if (retryTimer) clearInterval(retryTimer);
+          retryTimer = setInterval(function () {
+            var ok = tryInsertOnce();
+            if (ok && Date.now() - start > 5000) {
+              clearInterval(retryTimer);
+              retryTimer = null;
+            }
+            if (Date.now() - start > MAX_WAIT_MS) {
+              clearInterval(retryTimer);
+              retryTimer = null;
+            }
+          }, RECHECK_MS);
+        }
+
+        var mo = new MutationObserver(function () { tryInsertOnce(); });
+        if (ROOT) mo.observe(ROOT, { childList: true, subtree: true });
+
+        function hookHistory() {
+          ['pushState', 'replaceState'].forEach(function (m) {
+            var orig = history[m];
+            if (typeof orig === 'function') {
+              history[m] = function () {
+                var ret = orig.apply(this, arguments);
+                window.dispatchEvent(new Event('sprd:routechange'));
+                return ret;
+              };
+            }
+          });
+        }
+        hookHistory();
+
+        ['sprd:routechange', 'popstate', 'hashchange'].forEach(function (evt) {
+          window.addEventListener(evt, function () {
+            setTimeout(scheduleRetries, 300);
+          });
         });
-        var root = document.getElementById('myShop');
-        if (root) {
-          observer.observe(root, { subtree: true, childList: true });
-          // Fallback: nach 10s aufhören zu beobachten
-          setTimeout(function () { try { observer.disconnect(); } catch (e) {} }, 10000);
-        }
+
+        window.addEventListener('load', function () {
+          setTimeout(scheduleRetries, 300);
+        });
+
+        setTimeout(scheduleRetries, 0);
       })();
     </script>
     <noscript>
