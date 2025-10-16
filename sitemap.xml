@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sitemap für https://www.lax-republic.de/ -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://www.lax-republic.de/</loc>
+    <lastmod>2025-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.lax-republic.de/hero.jpg</image:loc>
+      <image:title>Lax Republic – Lacrosse Streetwear</image:title>
+      <image:caption>Startseiten‑Hero der Lax Republic</image:caption>
+    </image:image>
+  </url>
+</urlset>
+
+
