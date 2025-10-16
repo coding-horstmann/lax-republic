@@ -24,44 +24,10 @@
       #myShop img { max-width: 100%; height: auto; }
       /* Optional: auf sehr großen Screens noch etwas schmaler */
       @media (min-width: 1600px) { #myShop { max-width: 1000px; } }
-
-      /* Eigene 2-spaltige Hero-Sektion */
-      .site-hero { background: #0f0f10; color: #fff; padding: 32px 0; }
-      .site-hero__inner {
-        width: 100%;
-        max-width: 1100px; /* passend zu #myShop */
-        margin: 0 auto;
-        padding: 0 16px;
-        box-sizing: border-box;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-        align-items: center;
-      }
-      .site-hero__media img { width: 100%; height: auto; display: block; border-radius: 8px; object-fit: cover; }
-      .site-hero__headline { font-size: 36px; line-height: 1.2; font-weight: 800; margin: 0 0 10px 0; }
-      .site-hero__subline { font-size: 18px; line-height: 1.5; margin: 0; opacity: .95; }
-      @media (max-width: 860px) {
-        .site-hero__inner { grid-template-columns: 1fr; }
-        .site-hero__headline { font-size: 28px; }
-      }
-      /* Spreadshop-eigene Hero/Promo-Banner im Embed ausblenden */
-      #myShop [class*="Hero"],
-      #myShop [class*="hero"],
-      #myShop [class*="Banner"],
-      #myShop [class*="banner"],
-      #myShop [data-testid="hero-banner"],
-      #myShop [data-test-id="hero-banner"] { display: none !important; }
-      /* Weißer Hintergrund + Open Sans nur für unsere Hero-Rechte-Spalte */
-      .site-hero__content { background: #fff; color: #111; padding: 16px; border-radius: 8px; font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif; }
-      .site-hero__headline, .site-hero__subline { font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Liberation Sans', sans-serif; color: #111; }
     </style>
     <link rel="canonical" href="https://niklasarthouse.de/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="/favicon.svg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
   </head>
   <body>
     <div id="myShop"></div>
@@ -81,46 +47,6 @@
         var el = document.getElementById('myShop');
         if (el) el.style.visibility = 'visible';
       });
-    </script>
-    <script>
-      // Custom Hero zwischen Promo-Leiste und großem Rabatt-Banner einfügen
-      (function insertCustomHero() {
-        var inserted = false;
-        var container = document.getElementById('myShop');
-        if (!container) return;
-
-        function createHero() {
-          var wrap = document.createElement('div');
-          wrap.className = 'site-hero';
-          wrap.setAttribute('role', 'region');
-          wrap.setAttribute('aria-label', 'Hero');
-          wrap.innerHTML = '\n            <div class="site-hero__inner">\n              <div class="site-hero__media">\n                <img src="/hero.jpg" alt="Lacrosse Apparel: T-Shirts und Hoodies" loading="eager" fetchpriority="high">\n              </div>\n              <div class="site-hero__content">\n                <h1 class="site-hero__headline">Lacrosse T-Shirts, Hoodies & mehr</h1>\n                <p class="site-hero__subline">Von Training bis Alltag – hier findest du deinen Lacrosse-Look.</p>\n              </div>\n            </div>\n          ';
-          return wrap;
-        }
-
-        function tryInsert() {
-          if (inserted) return;
-          // Suche den großen Rabatt-Hero anhand von gängigen Hinweisen
-          var heroCandidate = container.querySelector('[data-testid="hero-banner"], [data-test-id="hero-banner"]');
-          if (!heroCandidate) {
-            var nodes = Array.from(container.querySelectorAll('h1,h2,h3,div,p,span'));
-            var hit = nodes.find(function(n){ return /25%\s*Rabatt\s*auf\s*alles/i.test(n.textContent || ''); });
-            if (hit) heroCandidate = hit.closest('section,div') || hit.parentElement;
-          }
-          if (!heroCandidate) return; // noch nicht gerendert
-
-          var custom = createHero();
-          heroCandidate.parentNode.insertBefore(custom, heroCandidate);
-          heroCandidate.style.display = 'none';
-          inserted = true;
-          obs && obs.disconnect();
-        }
-
-        // Initial versuchen und mit Observer nachladen
-        tryInsert();
-        var obs = new MutationObserver(tryInsert);
-        obs.observe(container, { childList: true, subtree: true });
-      })();
     </script>
     <noscript>
       Bitte JavaScript aktivieren, um den Shop zu sehen. Alternativ direkt hier einkaufen:
