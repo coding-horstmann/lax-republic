@@ -24,12 +24,51 @@
       #myShop img { max-width: 100%; height: auto; }
       /* Optional: auf sehr großen Screens noch etwas schmaler */
       @media (min-width: 1600px) { #myShop { max-width: 1000px; } }
+
+      /* Eigene 2-spaltige Hero-Sektion */
+      .site-hero { background: #0f0f10; color: #fff; padding: 32px 0; }
+      .site-hero__inner {
+        width: 100%;
+        max-width: 1100px; /* passend zu #myShop */
+        margin: 0 auto;
+        padding: 0 16px;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: center;
+      }
+      .site-hero__media img { width: 100%; height: auto; display: block; border-radius: 8px; object-fit: cover; }
+      .site-hero__headline { font-size: 36px; line-height: 1.2; font-weight: 800; margin: 0 0 10px 0; }
+      .site-hero__subline { font-size: 18px; line-height: 1.5; margin: 0; opacity: .95; }
+      @media (max-width: 860px) {
+        .site-hero__inner { grid-template-columns: 1fr; }
+        .site-hero__headline { font-size: 28px; }
+      }
+      /* Spreadshop-eigene Hero/Promo-Banner im Embed ausblenden */
+      #myShop [class*="Hero"],
+      #myShop [class*="hero"],
+      #myShop [class*="Banner"],
+      #myShop [class*="banner"],
+      #myShop [data-testid="hero-banner"],
+      #myShop [data-test-id="hero-banner"] { display: none !important; }
     </style>
     <link rel="canonical" href="https://niklasarthouse.de/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="/favicon.svg">
   </head>
   <body>
+    <div class="site-hero" role="region" aria-label="Hero">
+      <div class="site-hero__inner">
+        <div class="site-hero__media">
+          <img src="/hero.jpg" alt="Lacrosse Apparel: T-Shirts und Hoodies" loading="eager" fetchpriority="high">
+        </div>
+        <div class="site-hero__content">
+          <h1 class="site-hero__headline">Lacrosse T-Shirts, Hoodies & mehr</h1>
+          <p class="site-hero__subline">Von Training bis Alltag – hier findest du deinen Lacrosse-Look.</p>
+        </div>
+      </div>
+    </div>
     <div id="myShop"></div>
 
     <script>
