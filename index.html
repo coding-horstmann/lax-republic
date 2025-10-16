@@ -30,10 +30,50 @@
         background-position: left center !important;
         background-size: cover !important;
       }
+      /* Zwei-Spalten-Layout: links Bild (50%), rechts Text (50%) */
+      #myShop .sprd-startpage-teaser__link {
+        display: flex !important;
+        align-items: stretch !important;
+        min-height: 520px; /* genug Höhe für großen Eindruck */
+      }
+      #myShop .sprd-startpage-teaser__image {
+        position: relative !important; /* statt absolute */
+        width: 50% !important;
+        height: auto !important;
+        min-height: 520px; /* gleiche Höhe wie Container */
+        left: auto !important;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+      }
+      #myShop .sprd-startpage-teaser__content {
+        width: 50% !important;
+        margin: 0 !important;
+        padding: 2rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        background: transparent !important;
+      }
       /* Etwaige Dimm-/Filtereffekte der Standard-Hero-Grafik entfernen */
       #myShop .sprd-startpage-teaser__image--has-text {
         filter: none !important;
         opacity: 1 !important;
+      }
+      /* Mobile: wieder untereinander stapeln */
+      @media (max-width: 767px) {
+        #myShop .sprd-startpage-teaser__link {
+          display: block !important;
+          min-height: 0;
+        }
+        #myShop .sprd-startpage-teaser__image {
+          width: 100% !important;
+          min-height: 45vh;
+        }
+        #myShop .sprd-startpage-teaser__content {
+          width: 100% !important;
+          padding: 1.25rem !important;
+        }
       }
     </style>
     <link rel="canonical" href="https://niklasarthouse.de/">
