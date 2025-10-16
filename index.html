@@ -10,6 +10,17 @@
     <style>
       html, body { height: 100%; margin: 0; }
       body { background: #fff; }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 1px, 1px);
+        white-space: nowrap;
+        border: 0;
+      }
       /* Vollflächig, initial unsichtbar (FOUC vermeiden) */
       #myShop {
         min-height: 100vh;
@@ -136,7 +147,7 @@
     <link rel="alternate icon" href="/favicon.svg">
   </head>
   <body>
-    
+    <h1 class="sr-only">Lacrosse Shop – T‑Shirts & Hoodies für Spieler und Fans – Lax Republic</h1>
     <div id="myShop"></div>
 
     <script>
