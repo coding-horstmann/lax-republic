@@ -9,15 +9,13 @@
     <style>
       html, body { height: 100%; margin: 0; }
       body { background: #fff; }
-      /* Vollflächig, keine Ränder/Frames */
-      #myShop { min-height: 100vh; }
+      /* Vollflächig, keine Ränder/Frames; zunächst unsichtbar, um FOUC zu vermeiden */
+      #myShop { min-height: 100vh; visibility: hidden; }
     </style>
     <link rel="canonical" href="https://niklasarthouse.de/">
   </head>
   <body>
-    <div id="myShop">
-      <a href="https://lax-republic.myspreadshop.de">lax-republic</a>
-    </div>
+    <div id="myShop"></div>
 
     <script>
       var spread_shop_config = {
@@ -28,6 +26,13 @@
       };
     </script>
     <script type="text/javascript" src="https://lax-republic.myspreadshop.de/shopfiles/shopclient/shopclient.nocache.js"></script>
+    <script>
+      // Sobald die Seite geladen ist, Shop-Container einblenden
+      window.addEventListener('load', function () {
+        var el = document.getElementById('myShop');
+        if (el) el.style.visibility = 'visible';
+      });
+    </script>
     <noscript>
       Bitte JavaScript aktivieren, um den Shop zu sehen. Alternativ direkt hier einkaufen:
       <a href="https://lax-republic.myspreadshop.de">lax-republic.myspreadshop.de</a>
