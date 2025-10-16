@@ -30,6 +30,35 @@
         background-position: left center !important;
         background-size: cover !important;
       }
+      /* Einfacher FAQ-Block (wird dynamisch vor "Über den Shop" eingefügt) */
+      .custom-faq {
+        margin: 3rem 0;
+        padding: 1rem 1.25rem;
+        border: 1px solid rgba(0,0,0,.12);
+        border-radius: 6px;
+        background: #fff;
+      }
+      .custom-faq__title {
+        margin: 0 0 .75rem;
+      }
+      .custom-faq details {
+        border-top: 1px solid rgba(0,0,0,.08);
+        padding: .75rem 0;
+      }
+      .custom-faq details:first-of-type {
+        border-top: 0;
+      }
+      .custom-faq summary {
+        cursor: pointer;
+        font-weight: 700;
+        list-style: none;
+      }
+      .custom-faq summary::-webkit-details-marker { display: none; }
+      .custom-faq__answer {
+        margin-top: .5rem;
+        color: #22262D;
+        line-height: 1.5;
+      }
       /* Zwei-Spalten-Layout: links Bild (50%), rechts Text (50%) */
       #myShop .sprd-startpage-teaser__link {
         display: flex !important;
@@ -98,6 +127,50 @@
         var el = document.getElementById('myShop');
         if (el) el.style.visibility = 'visible';
       });
+    </script>
+    <script>
+      // FAQ-Block dynamisch direkt vor den Bereich "Über den Shop" setzen
+      (function insertFAQWhenReady() {
+        var FAQ_HTML = (function () {
+          var wrapper = document.createElement('section');
+          wrapper.className = 'custom-faq sprd-bg-m3 sprd-c-s3';
+          wrapper.setAttribute('aria-labelledby', 'custom-faq-title');
+          wrapper.innerHTML = (
+            '<h2 id="custom-faq-title" class="custom-faq__title sprd__caption">FAQ</h2>' +
+            '<details><summary>Wie sind die Größen der Produkte?</summary><div class="custom-faq__answer">Platzhalter-Text. Details folgen.</div></details>' +
+            '<details><summary>Wie lange dauert der Versand?</summary><div class="custom-faq__answer">Platzhalter-Text. Details folgen.</div></details>' +
+            '<details><summary>Welche Zahlungsmethoden gibt es?</summary><div class="custom-faq__answer">Platzhalter-Text. Details folgen.</div></details>' +
+            '<details><summary>Kann ich Artikel zurückgeben?</summary><div class="custom-faq__answer">Platzhalter-Text. Details folgen.</div></details>' +
+            '<details><summary>Wie pflege ich bedruckte Textilien?</summary><div class="custom-faq__answer">Platzhalter-Text. Details folgen.</div></details>' +
+            '<details><summary>Gibt es nachhaltige Produkte?</summary><div class="custom-faq__answer">Platzhalter-Text. Details folgen.</div></details>' +
+            '<details><summary>Wie kontaktiere ich den Support?</summary><div class="custom-faq__answer">Platzhalter-Text. Details folgen.</div></details>'
+          );
+          return wrapper;
+        })();
+
+        function tryInsert() {
+          var about = document.querySelector('#myShop #sprd-startpage-about-us');
+          if (about && about.parentNode && !document.getElementById('custom-faq-title')) {
+            about.parentNode.insertBefore(FAQ_HTML, about);
+            return true;
+          }
+          return false;
+        }
+
+        if (tryInsert()) return;
+
+        var observer = new MutationObserver(function () {
+          if (tryInsert()) {
+            observer.disconnect();
+          }
+        });
+        var root = document.getElementById('myShop');
+        if (root) {
+          observer.observe(root, { subtree: true, childList: true });
+          // Fallback: nach 10s aufhören zu beobachten
+          setTimeout(function () { try { observer.disconnect(); } catch (e) {} }, 10000);
+        }
+      })();
     </script>
     <noscript>
       Bitte JavaScript aktivieren, um den Shop zu sehen. Alternativ direkt hier einkaufen:
