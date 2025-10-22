@@ -159,14 +159,95 @@
     <link rel="canonical" href="https://www.lax-republic.de/">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="/favicon.svg">
-    <!-- JSON-LD: Organization -->
+    <!-- JSON-LD: LocalBusiness / ClothingStore -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Organization",
+      "@type": "ClothingStore",
       "name": "Lax Republic",
+      "description": "Online-Shop für Lacrosse-inspirierte Streetwear – T-Shirts, Hoodies und Accessoires für Spieler und Fans",
       "url": "https://www.lax-republic.de/",
       "logo": "https://www.lax-republic.de/favicon.svg",
+      "image": "https://www.lax-republic.de/hero.jpg",
+      "priceRange": "€€",
+      "currenciesAccepted": "EUR",
+      "paymentAccepted": "Credit Card, PayPal, SEPA",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Germany"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Lacrosse Streetwear",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "Männer Bekleidung",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Lacrosse T-Shirts für Männer",
+                  "category": "Sportbekleidung > Lacrosse > T-Shirts"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Lacrosse Hoodies für Männer",
+                  "category": "Sportbekleidung > Lacrosse > Hoodies"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Frauen Bekleidung",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Lacrosse T-Shirts für Frauen",
+                  "category": "Sportbekleidung > Lacrosse > T-Shirts"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Lacrosse Hoodies für Frauen",
+                  "category": "Sportbekleidung > Lacrosse > Hoodies"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Accessoires",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Lacrosse Taschen & Rucksäcke",
+                  "category": "Sportbekleidung > Lacrosse > Accessoires"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Product",
+                  "name": "Lacrosse Tassen & Zubehör",
+                  "category": "Sportbekleidung > Lacrosse > Accessoires"
+                }
+              }
+            ]
+          }
+        ]
+      },
       "sameAs": []
     }
     </script>
@@ -182,6 +263,102 @@
         "target": "https://www.lax-republic.de/?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Was ist Lax Republic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lax Republic ist ein Online-Shop für Lacrosse-inspirierte Streetwear. Hier findest du stylishe Kleidung wie z.B. T-Shirts und Hoodies, die den Spirit des Sports auf die Straße bringt – lässig, sportlich und individuell."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie nachhaltig ist meine Bestellung?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Deine Bestellung wird erst nach dem Kauf individuell produziert – das sogenannte Print-on-Demand-Verfahren. Dadurch entstehen keine Überproduktionen oder Lagerbestände, was Abfall und Ressourcenverbrauch deutlich reduziert."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie wird nachhaltig produziert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Die Produkte werden mit modernen, wasserlosen Digitaldruckverfahren hergestellt, die ungiftige und biologisch abbaubare Tinten verwenden. Zudem erfolgt die Produktion papierlos und unter strengen Qualitätskontrollen für besonders langlebige Kleidung."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Welche nachhaltigen Materialien kann ich auswählen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Du kannst beim Shoppen gezielt nach Bio- oder Fairtrade-Produkten filtern. Diese Artikel bestehen aus nachhaltig erzeugten Materialien und unterstützen faire Arbeitsbedingungen entlang der Lieferkette."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wie funktioniert Rückgabe und Umtausch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Du kannst deine Bestellung innerhalb von 30 Tagen umtauschen, wenn sie nicht passt oder deinen Erwartungen nicht entspricht. Dabei stehen dir ein Umtausch gegen neue Ware oder ein Gutschein zur Verfügung; eine Erstattung ist bei unpersonalisierten Produkten ebenfalls möglich."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Wer trägt die Rücksendekosten und was passiert mit Retouren?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ab einem Bestellwert von 40 € werden die Rücksendekosten übernommen. Retouren werden, wenn möglich, gespendet oder recycelt, um Abfall zu vermeiden und Ressourcen zu schonen."
+          }
+        }
+      ]
+    }
+    </script>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Startseite",
+          "item": "https://www.lax-republic.de/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Männer",
+          "item": "https://www.lax-republic.de/maenner"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Frauen",
+          "item": "https://www.lax-republic.de/frauen"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Accessoires",
+          "item": "https://www.lax-republic.de/accessoires"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Nachhaltige Produkte",
+          "item": "https://www.lax-republic.de/nachhaltige-produkte"
+        }
+      ]
     }
     </script>
   </head>
